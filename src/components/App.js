@@ -1,5 +1,6 @@
 import React, { useReducer, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Evetnt from './Event';
 import reducer from '../reducers';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
     setTitle('');
     setBody('');
   };
+  const handleClickDeleteButton = () => {};
 
   console.log(state);
   return (
@@ -57,7 +59,11 @@ const App = () => {
             <th>ボディー</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {state.map((event, index) => (
+            <Evetnt key={index} event={event} dispatch={dispatch} />
+          ))}
+        </tbody>
       </table>
     </div>
   );
