@@ -10,6 +10,7 @@ import reducer from '../reducers';
 const App = () => {
   const initalState = {
     events: [],
+    operationLogs: [],
   };
   const [state, dispatch] = useReducer(reducer, initalState); //第3引数は初期化時
   // console.log(state, 'in App.js');
