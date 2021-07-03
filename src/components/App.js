@@ -5,16 +5,16 @@ import Events from './Events';
 import AppContext from '../contexts/AppContext';
 import reducer from '../reducers';
 
-console.log({ AppContext });
+//console.log({ AppContext });
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, []); //第3引数は初期化時
   // console.log(state, 'in App.js');
   return (
-    <AppContext.Provider value={'Hello, I am a Privider'}>
+    <AppContext.Provider value={{ state, dispatch }}>
       <div className="container-fluid">
-        <EventForm state={state} dispatch={dispatch} />
-        <Events state={state} dispatch={dispatch} />
+        <EventForm />
+        <Events />
       </div>
     </AppContext.Provider>
   );
